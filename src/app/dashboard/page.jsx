@@ -12,12 +12,16 @@ const DashboardPage = () => {
 
     return (
         <div className="flex flex-col items-start gap-4 p-4 bg-white rounded shadow">
-            <button
-                onClick={() => { authClient.signOut(); router.push('/') }}
-                className="px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-600 transition"
-            >
-                Logout
-            </button>
+            <div className="flex gap-10">
+                <button
+                    onClick={() => { authClient.signOut(); router.push('/') }}
+                    className="px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-600 transition"
+                >
+                    Logout
+                </button>
+
+                <p className="font-bold text-2xl">{user?.email}</p>
+            </div>
 
             {user?.email === 'rootadmin@company.com' && (
                 <div className="w-full mt-2">

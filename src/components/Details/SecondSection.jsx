@@ -9,6 +9,7 @@ const SecondSection = ({ postDetailes }) => {
         const formData = new FormData(e.target);
         const newComment = Object.fromEntries(formData.entries());
         const res = await postComment(newComment, postDetailes._id)
+        window.location.reload(`/${postDetailes._id}`);
     };
 
 
@@ -63,38 +64,6 @@ const SecondSection = ({ postDetailes }) => {
                             </a>
 
                         </div>
-
-                        {/* <div className="flex items-center justify-between p-4">
-
-                            <div className="flex items-center gap-3">
-
-                                <FaRegFileVideo className="text-[28px] text-[#13253d]" />
-
-                                <div>
-
-                                    <p className="font-semibold text-[#13253d]">
-                                        MKV Format
-                                    </p>
-
-                                    <p className="text-sm text-[#5f6b7a]">
-                                        Standard Download
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-                            <a
-                                href={postDetailes.vid}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-11 h-11 rounded-xl border border-[#d8dee7] flex items-center justify-center hover:bg-[#f6f8fb] transition"
-                            >
-                                <FaDownload />
-                            </a>
-
-                        </div> */}
-
                     </div>
 
                 </div>
